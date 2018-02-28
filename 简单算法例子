@@ -1,0 +1,87 @@
+1.1引言
+    算法：
+    --输入
+    --有限指令集
+    --输出
+    Donald E.Knuth   --计算机科学就是算法的研究。
+    
+1.2历史背景
+
+1.3二分搜索
+
+    算法1.1 LINEARSEARCH
+    输入：n个元素的数组A[1...n]和元素x.
+    输出：如果x=A[j],1<=j<=n,则输出j,否则输出0.
+         1.j←1
+         2.while(j<n)and(x≠A[j])
+         3.j←j+1
+         4.end while
+         5.if x=A[j] then return j else return 0
+         
+         //这个是顺序搜索
+         
+         
+    算法1.2 BINARYSEARCH
+    输入：n个元素的升序数组A[1...n]和元素x.
+    输出：如果x=A[j],1<=j<=n,则输出j,否则输出0.
+         1.low←1;high←n;j←0
+         2.while(low<=high)and(j=0)
+         3.    mid←⌊(low+high)/2⌋
+         4.    if x=A[mid] then j←mid
+         5.    else if x<A[mid] then high←mid-1
+         6.    else low←mid+1
+         7.end while
+         8.return j
+         
+         //这个是二分搜索
+         
+     二分搜索算法分析
+     最大比较次数为：j=⌊log n⌋+1
+     
+    定理1.1 对于一个大小为n的排序数组，算法BINARYSEARCH执行比较的最大次数为⌊log n⌋+1
+    
+    
+1.4 合并两个已排序的表
+    算法1.3 MERGE
+    输入：数组A[1...m]和它的三个索引p,q,r,1<=p<=q<r<=m,两个子数组A[p...q]和A[q+1...r]各自按升序排列.
+    输出：合并两个子数组A[p...q]和A[q+1...r]的数组A[p...r]
+         1.comment:B[p...r]是个辅助数组
+         2.s←p;t←q+1;k←p
+         3.while s<=q and t<=r
+         4.    if A[s]<=A[t] then 
+         5.        B[k]←A[s]
+         6.        s←s+1
+         7.    else
+         8.      B[k]←A[t]
+         9.      t←t+1
+         10.   end if
+         11.   k←k+1
+         12.end while
+         13.if s=q+1 then B[k...r]←A[t...r]
+         14.else B[k...r]←A[s...p]
+         15.end if
+         16.A[p...r]←B[p...r]
+         
+  
+  观察结论 1.1 执行算法MERGE将两个大小分别为n1和n2的非空组合并成一个大小为 n=n1+n2的排序数组，当n1<=n2
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
